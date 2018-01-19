@@ -23,11 +23,13 @@ public class IncomingCall extends BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         //Log.w("intent " , intent.getAction().toString());
 
-        if (intent.getAction().equals("android.intent.action.NEW_OUTGOING_CALL")) {
+        if (intent.getAction().equals("android.intent.action.NEW_OUTGOING_CALL"))
+        {
             savedNumber = intent.getExtras().getString("android.intent.extra.PHONE_NUMBER");
 
         }
-        else{
+        else
+        {
             String stateStr = intent.getExtras().getString(TelephonyManager.EXTRA_STATE);
             String number = intent.getExtras().getString(TelephonyManager.EXTRA_INCOMING_NUMBER);
             int state = 0;
